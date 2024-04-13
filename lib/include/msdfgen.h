@@ -43,7 +43,7 @@ void generateSDF(const BitmapRef<float, 1> &output,
   const Vector2 &scale,
   const Vector2 &translate,
   bool overlapSupport = true);
-  
+
 void generatePSDF(const BitmapRef<float, 1> &output,
   const Shape &shape,
   double range,

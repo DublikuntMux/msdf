@@ -9,39 +9,41 @@ typedef unsigned unicode_t;
 class FreetypeHandle;
 class FontHandle;
 
-class GlyphIndex {
+class GlyphIndex
+{
 
 public:
-    explicit GlyphIndex(unsigned index = 0);
-    unsigned getIndex() const;
+  explicit GlyphIndex(unsigned index = 0);
+  unsigned getIndex() const;
 
 private:
-    unsigned index;
-
+  unsigned index;
 };
 
 /// Global metrics of a typeface (in font units).
-struct FontMetrics {
-    /// The size of one EM.
-    double emSize;
-    /// The vertical position of the ascender and descender relative to the baseline.
-    double ascenderY, descenderY;
-    /// The vertical difference between consecutive baselines.
-    double lineHeight;
-    /// The vertical position and thickness of the underline.
-    double underlineY, underlineThickness;
+struct FontMetrics
+{
+  /// The size of one EM.
+  double emSize;
+  /// The vertical position of the ascender and descender relative to the baseline.
+  double ascenderY, descenderY;
+  /// The vertical difference between consecutive baselines.
+  double lineHeight;
+  /// The vertical position and thickness of the underline.
+  double underlineY, underlineThickness;
 };
 
 /// A structure to model a given axis of a variable font.
-struct FontVariationAxis {
-    /// The name of the variation axis.
-    const char *name;
-    /// The axis's minimum coordinate value.
-    double minValue;
-    /// The axis's maximum coordinate value.
-    double maxValue;
-    /// The axis's default coordinate value. FreeType computes meaningful default values for Adobe MM fonts.
-    double defaultValue;
+struct FontVariationAxis
+{
+  /// The name of the variation axis.
+  const char *name;
+  /// The axis's minimum coordinate value.
+  double minValue;
+  /// The axis's maximum coordinate value.
+  double maxValue;
+  /// The axis's default coordinate value. FreeType computes meaningful default values for Adobe MM fonts.
+  double defaultValue;
 };
 
 /// Initializes the FreeType library.
@@ -49,8 +51,9 @@ FreetypeHandle *initializeFreetype();
 /// Deinitializes the FreeType library.
 void deinitializeFreetype(FreetypeHandle *library);
 
-#ifdef FT_LOAD_DEFAULT // FreeType included
-/// Creates a FontHandle from FT_Face that was loaded by the user. destroyFont must still be called but will not affect the FT_Face.
+#ifdef FT_LOAD_DEFAULT// FreeType included
+/// Creates a FontHandle from FT_Face that was loaded by the user. destroyFont must still be called but will not affect
+/// the FT_Face.
 FontHandle *adoptFreetypeFont(FT_Face ftFace);
 /// Converts the geometry of FreeType's FT_Outline to a Shape object.
 FT_Error readFreetypeOutline(Shape &output, FT_Outline *outline);
@@ -79,4 +82,4 @@ bool getKerning(double &output, FontHandle *font, unicode_t unicode0, unicode_t 
 
 bool setFontVariationAxis(FreetypeHandle *library, FontHandle *font, const char *name, double coordinate);
 bool listFontVariationAxes(std::vector<FontVariationAxis> &axes, FreetypeHandle *library, FontHandle *font);
-}
+}// namespace msdfgen

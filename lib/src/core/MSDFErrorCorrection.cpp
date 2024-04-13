@@ -461,16 +461,9 @@ void MSDFErrorCorrection::findErrors(const BitmapConstRef<float, N> &sdf, const 
   double hSpan = minDeviationRatio * projection.unprojectVector(Vector2(invRange, 0)).length();
   double vSpan = minDeviationRatio * projection.unprojectVector(Vector2(0, invRange)).length();
   double dSpan = minDeviationRatio * projection.unprojectVector(Vector2(invRange)).length();
-#ifdef MSDLIB_USE_OPENMP
-#pragma omp parallel
-#endif
   {
     ShapeDistanceChecker<ContourCombiner, N> shapeDistanceChecker(sdf, shape, projection, invRange, minImproveRatio);
     bool rightToLeft = false;
-    // Inspect all texels.
-#ifdef MSDLIB_USE_OPENMP
-#pragma omp for
-#endif
     for (int y = 0; y < sdf.height; ++y) {
       int row = shape.inverseYAxis ? sdf.height - y - 1 : y;
       for (int col = 0; col < sdf.width; ++col) {

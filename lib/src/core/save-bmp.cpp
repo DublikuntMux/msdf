@@ -75,24 +75,24 @@ bool saveBmp(const BitmapConstRef<byte, 1> &bitmap, const char *filename)
 
 bool saveBmp(const BitmapConstRef<byte, 3> &bitmap, const char *filename)
 {
-    FILE *file;
-    errno_t err = fopen_s(&file, filename, "wb");
-    if (err != 0) return false;
+  FILE *file;
+  errno_t err = fopen_s(&file, filename, "wb");
+  if (err != 0) return false;
 
-    int paddedWidth;
-    writeBmpHeader(file, bitmap.width, bitmap.height, paddedWidth);
+  int paddedWidth;
+  writeBmpHeader(file, bitmap.width, bitmap.height, paddedWidth);
 
-    const uint8_t padding[4] = {};
-    int padLength = paddedWidth - 3 * bitmap.width;
-    for (int y = 0; y < bitmap.height; ++y) {
-        for (int x = 0; x < bitmap.width; ++x) {
-            uint8_t bgr[3] = { (uint8_t)bitmap(x, y)[2], (uint8_t)bitmap(x, y)[1], (uint8_t)bitmap(x, y)[0] };
-            fwrite(bgr, sizeof(uint8_t), 3, file);
-        }
-        fwrite(padding, 1, padLength, file);
+  const uint8_t padding[4] = {};
+  int padLength = paddedWidth - 3 * bitmap.width;
+  for (int y = 0; y < bitmap.height; ++y) {
+    for (int x = 0; x < bitmap.width; ++x) {
+      uint8_t bgr[3] = { (uint8_t)bitmap(x, y)[2], (uint8_t)bitmap(x, y)[1], (uint8_t)bitmap(x, y)[0] };
+      fwrite(bgr, sizeof(uint8_t), 3, file);
     }
+    fwrite(padding, 1, padLength, file);
+  }
 
-    return !fclose(file);
+  return !fclose(file);
 }
 
 bool saveBmp(const BitmapConstRef<byte, 4> &bitmap, const char *filename)

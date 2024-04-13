@@ -13,7 +13,7 @@ void msdfErrorCorrection(const BitmapRef<float, 3> &sdf,
   const Projection &projection,
   double range,
   const MSDFGeneratorConfig &config = MSDFGeneratorConfig());
-  
+
 void msdfErrorCorrection(const BitmapRef<float, 4> &sdf,
   const Shape &shape,
   const Projection &projection,

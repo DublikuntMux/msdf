@@ -26,9 +26,9 @@ int readCharS(const char **input)
   return c;
 }
 
-int readCoordF(FILE *input, Point2 &coord) 
-{ 
- return fscanf_s(input, "%lf , %lf", &coord.x, sizeof(coord.x), &coord.y, sizeof(coord.y)); 
+int readCoordF(FILE *input, Point2 &coord)
+{
+  return fscanf_s(input, "%lf , %lf", &coord.x, sizeof(coord.x), &coord.y, sizeof(coord.y));
 }
 
 int readCoordS(const char **input, Point2 &coord)
@@ -185,10 +185,7 @@ bool readShapeDescription(FILE *input, Shape &output, bool *colorsSpecified)
     int c = readCharF(input);
     if (c == '@') {
       char after = '\0';
-      if (fscanf_s(input, "invert-y%c", &after, sizeof(after)) != 1)
-      {
-        return feof(input) != 0;
-      }
+      if (fscanf_s(input, "invert-y%c", &after, sizeof(after)) != 1) { return feof(input) != 0; }
       output.inverseYAxis = true;
       c = after;
       if (c == ' ' || c == '\t' || c == '\r' || c == '\n') c = readCharF(input);

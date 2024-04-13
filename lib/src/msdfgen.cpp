@@ -56,11 +56,9 @@ void generateDistanceField(
   double range)
 {
   DistancePixelConversion<typename ContourCombiner::DistanceType> distancePixelConversion(range);
-#pragma omp parallel
   {
     ShapeDistanceFinder<ContourCombiner> distanceFinder(shape);
     bool rightToLeft = false;
-#pragma omp for
     for (int y = 0; y < output.height; ++y) {
       int row = shape.inverseYAxis ? output.height - y - 1 : y;
       for (int col = 0; col < output.width; ++col) {
