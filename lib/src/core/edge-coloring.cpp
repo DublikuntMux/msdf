@@ -6,7 +6,7 @@
 #include <vector>
 
 #include "core/arithmetics.hpp"
-#include "core/edge-coloring.h"
+#include "core/edge-coloring.hpp"
 
 namespace msdfgen {
 

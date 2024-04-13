@@ -1,4 +1,4 @@
-#include "atlas/Charset.h"
+#include "atlas/Charset.hpp"
 
 namespace msdf_atlas {
 static Charset createAsciiCharset()

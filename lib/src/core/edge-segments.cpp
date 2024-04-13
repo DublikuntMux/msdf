@@ -1,6 +1,6 @@
-#include "core/edge-segments.h"
+#include "core/edge-segments.hpp"
 #include "core/arithmetics.hpp"
-#include "core/equation-solver.h"
+#include "core/equation-solver.hpp"
 
 namespace msdfgen {
 

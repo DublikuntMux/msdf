@@ -1,7 +1,7 @@
 #include <cstdio>
 
-#include "atlas/GlyphGeometry.h"
-#include "atlas/csv-export.h"
+#include "atlas/GlyphGeometry.hpp"
+#include "atlas/csv-export.hpp"
 
 namespace msdf_atlas {
 bool exportCSV(const FontGeometry *fonts,

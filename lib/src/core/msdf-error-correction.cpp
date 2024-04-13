@@ -1,7 +1,7 @@
-#include "core/msdf-error-correction.h"
-#include "core/Bitmap.h"
-#include "core/MSDFErrorCorrection.h"
-#include "core/contour-combiners.h"
+#include "core/msdf-error-correction.hpp"
+#include "core/Bitmap.hpp"
+#include "core/MSDFErrorCorrection.hpp"
+#include "core/contour-combiners.hpp"
 
 namespace msdfgen {
 

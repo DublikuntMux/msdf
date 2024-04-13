@@ -1,6 +1,6 @@
 #include <algorithm>
 
-#include "atlas/GridAtlasPacker.h"
+#include "atlas/GridAtlasPacker.hpp"
 
 namespace msdf_atlas {
 static int floorPOT(int x)

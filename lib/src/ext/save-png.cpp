@@ -2,7 +2,7 @@
 #include <vector>
 
 #include "core/pixel-conversion.hpp"
-#include "ext/save-png.h"
+#include "ext/save-png.hpp"
 
 #include <lodepng.h>
 

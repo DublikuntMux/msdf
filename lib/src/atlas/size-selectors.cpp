@@ -1,6 +1,6 @@
 #include <cmath>
 
-#include "atlas/size-selectors.h"
+#include "atlas/size-selectors.hpp"
 
 namespace msdf_atlas {
 template<int MULTIPLE> SquareSizeSelector<MULTIPLE>::SquareSizeSelector(int minArea) : lowerBound(0), upperBound(-1)

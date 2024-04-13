@@ -1,7 +1,7 @@
 #pragma once
 
 #include "core/arithmetics.hpp"
-#include "core/base.h"
+#include "core/base.hpp"
 
 namespace msdfgen {
 inline byte pixelFloatToByte(float x) { return byte(clamp(256.f * x, 255.f)); }

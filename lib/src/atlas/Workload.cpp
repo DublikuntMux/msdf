@@ -3,7 +3,7 @@
 #include <thread>
 #include <vector>
 
-#include "atlas/Workload.h"
+#include "atlas/Workload.hpp"
 
 namespace msdf_atlas {
 Workload::Workload() : chunks(0) {}

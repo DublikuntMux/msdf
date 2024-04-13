@@ -2,10 +2,17 @@
 
 #include <vector>
 
-#include "atlas/RectanglePacker.h"
-#include "atlas/rectangle-packing.h"
+#include "atlas/RectanglePacker.hpp"
 
 namespace msdf_atlas {
+template<typename RectangleType>
+int packRectangles(RectangleType *rectangles, int count, int width, int height, int spacing = 0);
+
+/// Packs the rectangle array into an atlas of unknown size, returns the minimum required dimensions constrained by
+/// SizeSelector
+template<class SizeSelector, typename RectangleType>
+std::pair<int, int> packRectangles(RectangleType *rectangles, int count, int spacing = 0);
+
 static void copyRectanglePlacement(Rectangle &dst, const Rectangle &src)
 {
   dst.x = src.x;

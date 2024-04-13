@@ -26,6 +26,7 @@ option(MSDF_ENABLE_SANITIZER_LEAK "Enable leak sanitizer" OFF)
 option(MSDF_ENABLE_SANITIZER_UNDEFINED "Enable undefined sanitizer" OFF)
 option(MSDF_ENABLE_SANITIZER_THREAD "Enable thread sanitizer" OFF)
 option(MSDF_ENABLE_SANITIZER_MEMORY "Enable memory sanitizer" OFF)
+option(MSDF_ENABLE_TOOL "Enable building of atlas eneration executable" ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -40,11 +41,27 @@ if(MSDF_ENABLE_CACHE)
   enable_cache()
 endif()
 
+add_subdirectory("deps")
 add_subdirectory("lib")
+
+if(MSDF_ENABLE_TOOL)
+  add_subdirectory("atlas-gen")
+endif()
 
 set_project_warnings(MSDFLib ${MSDF_WARNINGS_AS_ERRORS} "" "" "")
 
+if(MSDF_ENABLE_TOOL)
+  set_project_warnings(msdf-atlas-gen ${MSDF_WARNINGS_AS_ERRORS} "" "" "")
+endif()
+
 enable_sanitizers(
-  MSDFLib ${MSDF_ENABLE_SANITIZER_ADDRESS}
-  ${MSDF_ENABLE_SANITIZER_LEAK} ${MSDF_ENABLE_SANITIZER_UNDEFINED}
-  ${MSDF_ENABLE_SANITIZER_THREAD} ${MSDF_ENABLE_SANITIZER_MEMORY})
+  MSDFLib ${MSDF_ENABLE_SANITIZER_ADDRESS} ${MSDF_ENABLE_SANITIZER_LEAK}
+  ${MSDF_ENABLE_SANITIZER_UNDEFINED} ${MSDF_ENABLE_SANITIZER_THREAD}
+  ${MSDF_ENABLE_SANITIZER_MEMORY})
+
+if(MSDF_ENABLE_TOOL)
+  enable_sanitizers(
+    msdf-atlas-gen ${MSDF_ENABLE_SANITIZER_ADDRESS}
+    ${MSDF_ENABLE_SANITIZER_LEAK} ${MSDF_ENABLE_SANITIZER_UNDEFINED}
+    ${MSDF_ENABLE_SANITIZER_THREAD} ${MSDF_ENABLE_SANITIZER_MEMORY})
+endif()

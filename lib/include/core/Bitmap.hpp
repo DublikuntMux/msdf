@@ -1,11 +1,39 @@
 #pragma once
 
-#include "core/Bitmap.h"
-
 #include <cstdlib>
 #include <cstring>
 
+#include "core/BitmapRef.hpp"
+
 namespace msdfgen {
+template<typename T, int N = 1> class Bitmap
+{
+public:
+  Bitmap();
+  Bitmap(int width, int height);
+  Bitmap(const BitmapConstRef<T, N> &orig);
+  Bitmap(const Bitmap<T, N> &orig);
+  Bitmap(Bitmap<T, N> &&orig);
+  ~Bitmap();
+  Bitmap<T, N> &operator=(const BitmapConstRef<T, N> &orig);
+  Bitmap<T, N> &operator=(const Bitmap<T, N> &orig);
+  Bitmap<T, N> &operator=(Bitmap<T, N> &&orig);
+  /// Bitmap width in pixels.
+  int width() const;
+  /// Bitmap height in pixels.
+  int height() const;
+  T *operator()(int x, int y);
+  const T *operator()(int x, int y) const;
+  explicit operator T *();
+  explicit operator const T *() const;
+  operator BitmapRef<T, N>();
+  operator BitmapConstRef<T, N>() const;
+
+private:
+  T *pixels;
+  int w, h;
+};
+
 template<typename T, int N> Bitmap<T, N>::Bitmap() : pixels(NULL), w(0), h(0) {}
 
 template<typename T, int N> Bitmap<T, N>::Bitmap(int width, int height) : w(width), h(height)

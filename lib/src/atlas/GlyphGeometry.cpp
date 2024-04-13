@@ -1,7 +1,7 @@
 #include <cmath>
 
-#include "atlas/GlyphGeometry.h"
-#include "core/ShapeDistanceFinder.h"
+#include "atlas/GlyphGeometry.hpp"
+#include "core/ShapeDistanceFinder.hpp"
 
 namespace msdf_atlas {
 GlyphGeometry::GlyphGeometry() : index(), codepoint(), geometryScale(), bounds(), advance(), box() {}

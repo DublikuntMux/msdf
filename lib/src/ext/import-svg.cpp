@@ -5,7 +5,7 @@
 #include <tinyxml2.h>
 
 #include "core/arithmetics.hpp"
-#include "ext/import-svg.h"
+#include "ext/import-svg.hpp"
 
 #define ARC_SEGMENTS_PER_PI 2
 #define ENDPOINT_SNAP_RANGE_PROPORTION (1 / 16384.)
@@ -26,12 +26,12 @@ namespace msdfgen {
   }
 #endif
 
-MSDLIB_PUBLIC const int SVG_IMPORT_FAILURE = 0x00;
-MSDLIB_PUBLIC const int SVG_IMPORT_SUCCESS_FLAG = 0x01;
-MSDLIB_PUBLIC const int SVG_IMPORT_PARTIAL_FAILURE_FLAG = 0x02;
-MSDLIB_PUBLIC const int SVG_IMPORT_INCOMPLETE_FLAG = 0x04;
-MSDLIB_PUBLIC const int SVG_IMPORT_UNSUPPORTED_FEATURE_FLAG = 0x08;
-MSDLIB_PUBLIC const int SVG_IMPORT_TRANSFORMATION_IGNORED_FLAG = 0x10;
+const int SVG_IMPORT_FAILURE = 0x00;
+const int SVG_IMPORT_SUCCESS_FLAG = 0x01;
+const int SVG_IMPORT_PARTIAL_FAILURE_FLAG = 0x02;
+const int SVG_IMPORT_INCOMPLETE_FLAG = 0x04;
+const int SVG_IMPORT_UNSUPPORTED_FEATURE_FLAG = 0x08;
+const int SVG_IMPORT_TRANSFORMATION_IGNORED_FLAG = 0x10;
 
 static void skipExtraChars(const char *&pathDef)
 {

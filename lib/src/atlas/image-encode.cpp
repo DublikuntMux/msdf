@@ -1,6 +1,6 @@
 #include <lodepng.h>
 
-#include "atlas/image-encode.h"
+#include "atlas/image-encode.hpp"
 #include "core/pixel-conversion.hpp"
 
 namespace msdf_atlas {

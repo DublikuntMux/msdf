@@ -1,7 +1,7 @@
 #include <cmath>
 
 #include "core/arithmetics.hpp"
-#include "core/sdf-error-estimation.h"
+#include "core/sdf-error-estimation.hpp"
 
 namespace msdfgen {
 

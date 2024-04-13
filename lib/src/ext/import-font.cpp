@@ -6,7 +6,7 @@
 #include FT_OUTLINE_H
 #include FT_MULTIPLE_MASTERS_H
 
-#include "ext/import-font.h"
+#include "ext/import-font.hpp"
 
 namespace msdfgen {
 #define F26DOT6_TO_DOUBLE(x) (1 / 64. * double(x))

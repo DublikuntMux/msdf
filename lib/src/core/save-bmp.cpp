@@ -2,7 +2,7 @@
 #include <cstdio>
 
 #include "core/pixel-conversion.hpp"
-#include "core/save-bmp.h"
+#include "core/save-bmp.hpp"
 
 namespace msdfgen {
 

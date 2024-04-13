@@ -1,4 +1,4 @@
-#include "atlas/FontGeometry.h"
+#include "atlas/FontGeometry.hpp"
 
 namespace msdf_atlas {
 FontGeometry::GlyphRange::GlyphRange() : glyphs(), rangeStart(), rangeEnd() {}

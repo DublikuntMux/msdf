@@ -1,6 +1,6 @@
 #include <algorithm>
 
-#include "atlas/RectanglePacker.h"
+#include "atlas/RectanglePacker.hpp"
 
 namespace msdf_atlas {
 #define WORST_FIT 0x7fffffff

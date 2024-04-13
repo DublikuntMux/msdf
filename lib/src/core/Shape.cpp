@@ -1,6 +1,6 @@
 #include <cstdlib>
 
-#include "core/Shape.h"
+#include "core/Shape.hpp"
 #include "core/arithmetics.hpp"
 
 namespace msdfgen {

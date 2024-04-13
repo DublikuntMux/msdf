@@ -1,6 +1,6 @@
 #include <cstdlib>
 
-#include "core/shape-description.h"
+#include "core/shape-description.hpp"
 
 namespace msdfgen {
 

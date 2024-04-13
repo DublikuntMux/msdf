@@ -1,5 +1,5 @@
 
-#include "core/Contour.h"
+#include "core/Contour.hpp"
 #include "core/arithmetics.hpp"
 
 namespace msdfgen {

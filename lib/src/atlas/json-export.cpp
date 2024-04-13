@@ -1,7 +1,7 @@
 #include <string>
 
-#include "atlas/GlyphGeometry.h"
-#include "atlas/json-export.h"
+#include "atlas/GlyphGeometry.hpp"
+#include "atlas/json-export.hpp"
 
 namespace msdf_atlas {
 static std::string escapeJsonString(const char *str)

@@ -1,7 +1,7 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 
-#include "core/equation-solver.h"
+#include "core/equation-solver.hpp"
 
 namespace msdfgen {
 

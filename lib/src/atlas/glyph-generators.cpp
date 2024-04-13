@@ -1,14 +1,14 @@
-#include "atlas/glyph-generators.h"
-#include "core/msdf-error-correction.h"
-#include "core/rasterization.h"
-#include "msdfgen.h"
+#include "atlas/glyph-generators.hpp"
+#include "core/msdf-error-correction.hpp"
+#include "core/rasterization.hpp"
+#include "msdfgen.hpp"
 
 namespace msdf_atlas {
 void scanlineGenerator(const msdfgen::BitmapRef<float, 1> &output,
   const GlyphGeometry &glyph,
   const GeneratorAttributes &attribs)
 {
-  msdfgen::rasterize(output, glyph.getShape(), glyph.getBoxScale(), glyph.getBoxTranslate(), MSDFLIB_GLYPH_FILL_RULE);
+  msdfgen::rasterize(output, glyph.getShape(), glyph.getBoxProjection(), MSDFLIB_GLYPH_FILL_RULE);
 }
 
 void sdfGenerator(const msdfgen::BitmapRef<float, 1> &output,

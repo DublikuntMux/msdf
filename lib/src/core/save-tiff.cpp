@@ -1,7 +1,7 @@
 #include <cstdint>
 #include <cstdio>
 
-#include "core/save-tiff.h"
+#include "core/save-tiff.hpp"
 
 namespace msdfgen {
 

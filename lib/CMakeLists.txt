@@ -1,11 +1,10 @@
 project(
   MSDFLib
-  VERSION 1.0.1
+  VERSION 1.0.0
   DESCRIPTION "MSDF atlas gen libaray"
   LANGUAGES CXX)
 
 file(GLOB_RECURSE msdf_sources CONFIGURE_DEPENDS "./src/*.cpp")
-
 add_library(MSDFLib ${msdf_sources})
 target_include_directories(MSDFLib PUBLIC include/)
 
@@ -16,10 +15,6 @@ FetchContent_Declare(
   freetype
   GIT_REPOSITORY https://github.com/freetype/freetype.git
   GIT_TAG VER-2-13-2)
-FetchContent_Declare(
-  lodepng
-  GIT_REPOSITORY https://github.com/lvandeve/lodepng.git
-  GIT_TAG master)
 FetchContent_Declare(
   tinyxml2
   GIT_REPOSITORY https://github.com/leethomason/tinyxml2.git
@@ -42,8 +37,7 @@ set(FT_DISABLE_HARFBUZZ
     CACHE BOOL "" FORCE)
 
 FetchContent_MakeAvailable(freetype)
-FetchContent_MakeAvailable(lodepng)
 FetchContent_MakeAvailable(tinyxml2)
 
-target_link_libraries(MSDFLib PUBLIC freetype lodepng tinyxml2)
-target_include_directories(MSDFLib PUBLIC ${freetype_SOURCE_DIR}/include ${lodepng_SOURCE_DIR})
+target_link_libraries(MSDFLib PUBLIC freetype lodepng tinyxml2 lodepng)
+target_include_directories(MSDFLib PUBLIC ${freetype_SOURCE_DIR}/include)

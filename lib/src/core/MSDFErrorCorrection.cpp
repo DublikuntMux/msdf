@@ -1,12 +1,12 @@
-#include "core/MSDFErrorCorrection.h"
-#include "core/EdgeColor.h"
-#include "core/ShapeDistanceFinder.h"
+#include "core/MSDFErrorCorrection.hpp"
+#include "core/EdgeColor.hpp"
+#include "core/ShapeDistanceFinder.hpp"
 #include "core/arithmetics.hpp"
 #include "core/bitmap-interpolation.hpp"
-#include "core/contour-combiners.h"
-#include "core/edge-selectors.h"
-#include "core/equation-solver.h"
-#include "core/generator-config.h"
+#include "core/contour-combiners.hpp"
+#include "core/edge-selectors.hpp"
+#include "core/equation-solver.hpp"
+#include "core/generator-config.hpp"
 
 namespace msdfgen {
 
@@ -16,8 +16,8 @@ namespace msdfgen {
 #define CLASSIFIER_FLAG_CANDIDATE 0x01
 #define CLASSIFIER_FLAG_ARTIFACT 0x02
 
-MSDLIB_PUBLIC const double ErrorCorrectionConfig::defaultMinDeviationRatio = 1.11111111111111111;
-MSDLIB_PUBLIC const double ErrorCorrectionConfig::defaultMinImproveRatio = 1.11111111111111111;
+const double ErrorCorrectionConfig::defaultMinDeviationRatio = 1.11111111111111111;
+const double ErrorCorrectionConfig::defaultMinImproveRatio = 1.11111111111111111;
 
 /// The base artifact classifier recognizes artifacts based on the contents of the SDF alone.
 class BaseArtifactClassifier

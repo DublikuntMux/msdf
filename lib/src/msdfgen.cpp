@@ -1,8 +1,8 @@
-#include "msdfgen.h"
-#include "core/ShapeDistanceFinder.h"
-#include "core/contour-combiners.h"
-#include "core/edge-selectors.h"
-#include "core/msdf-error-correction.h"
+#include "msdfgen.hpp"
+#include "core/ShapeDistanceFinder.hpp"
+#include "core/contour-combiners.hpp"
+#include "core/edge-selectors.hpp"
+#include "core/msdf-error-correction.hpp"
 
 namespace msdfgen {
 template<typename DistanceType> class DistancePixelConversion;

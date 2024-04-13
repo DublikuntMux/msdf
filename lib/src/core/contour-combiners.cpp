@@ -2,8 +2,8 @@
 #include <cfloat>
 
 #include "core/arithmetics.hpp"
-#include "core/contour-combiners.h"
-#include "core/edge-selectors.h"
+#include "core/contour-combiners.hpp"
+#include "core/edge-selectors.hpp"
 
 namespace msdfgen {
 

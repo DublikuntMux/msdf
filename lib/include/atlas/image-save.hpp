@@ -1,11 +1,17 @@
 #include <cstdio>
 
-#include "atlas/types.h"
-#include "core/save-bmp.h"
-#include "core/save-tiff.h"
-#include "ext/save-png.h"
+#include "atlas/types.hpp"
+#include "core/save-bmp.hpp"
+#include "core/save-tiff.hpp"
+#include "ext/save-png.hpp"
 
 namespace msdf_atlas {
+
+template<typename T, int N>
+bool saveImage(const msdfgen::BitmapConstRef<T, N> &bitmap,
+  ImageFormat format,
+  const char *filename,
+  YDirection outputYDirection = YDirection::BOTTOM_UP);
 template<int N>
 bool saveImageBinary(const msdfgen::BitmapConstRef<byte, N> &bitmap, const char *filename, YDirection outputYDirection);
 template<int N>

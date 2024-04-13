@@ -1,9 +1,9 @@
 #include <vector>
 
-#include "atlas/Rectangle.h"
-#include "atlas/TightAtlasPacker.h"
-#include "atlas/rectangle-packing.h"
-#include "atlas/size-selectors.h"
+#include "atlas/Rectangle.hpp"
+#include "atlas/TightAtlasPacker.hpp"
+#include "atlas/rectangle-packing.hpp"
+#include "atlas/size-selectors.hpp"
 
 namespace msdf_atlas {
 TightAtlasPacker::TightAtlasPacker()

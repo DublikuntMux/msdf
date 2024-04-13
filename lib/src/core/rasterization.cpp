@@ -1,7 +1,7 @@
 #include <vector>
 
 #include "core/arithmetics.hpp"
-#include "core/rasterization.h"
+#include "core/rasterization.hpp"
 
 namespace msdfgen {
 

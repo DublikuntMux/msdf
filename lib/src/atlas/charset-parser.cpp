@@ -1,8 +1,8 @@
 #include <cstdio>
 #include <string>
 
-#include "atlas/Charset.h"
-#include "atlas/utf8.h"
+#include "atlas/Charset.hpp"
+#include "atlas/utf8.hpp"
 
 namespace msdf_atlas {
 static char escapedChar(char c)

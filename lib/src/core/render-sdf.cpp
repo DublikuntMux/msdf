@@ -1,4 +1,4 @@
-#include "core/render-sdf.h"
+#include "core/render-sdf.hpp"
 #include "core/arithmetics.hpp"
 #include "core/bitmap-interpolation.hpp"
 #include "core/pixel-conversion.hpp"

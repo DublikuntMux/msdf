@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <cstring>
 
-#include "atlas/bitmap-blit.h"
+#include "atlas/bitmap-blit.hpp"
 #include "core/pixel-conversion.hpp"
 
 namespace msdf_atlas {

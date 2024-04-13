@@ -1,6 +1,6 @@
 #include <cstdlib>
 
-#include "core/Scanline.h"
+#include "core/Scanline.hpp"
 #include "core/arithmetics.hpp"
 
 namespace msdfgen {

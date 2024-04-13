@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <string>
 
-#include "atlas/shadron-preview-generator.h"
+#include "atlas/shadron-preview-generator.hpp"
 
 namespace msdf_atlas {
 static const char *const shadronFillGlyphMask = R"(
